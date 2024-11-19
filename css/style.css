@@ -1,0 +1,522 @@
+body, p, h1, h2, h3, ul {
+    margin: 0; 
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  input, button{
+    border: none;
+  }
+  /* подключаем шрифты */
+  @font-face {
+    font-family: "Open Sans";
+    src: url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Regular.woff);
+    font-weight: 400;  
+  }
+  
+  @font-face {
+    font-family: "Open Sans";
+    src: url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Bold.woff);
+    font-weight: 700;  
+  }
+  
+  /* формируем область шапки*/
+  .header {
+    min-width: 1220px;  
+    padding-bottom: 145px;
+    background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/banner-bg.jpg);
+    background-size: cover;
+    display: flex;
+    position: relative; 
+    z-index: 1;
+    justify-content: center;  
+  }
+  
+  /* добавляем полупрозрачный слой к шапке */
+  .header::after { 
+    content: "";
+    width: 100%; 
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #000000;   
+    position: absolute;
+    z-index: 2;
+    opacity: 0.6;  
+  }
+  
+  /*слой, объединяющий лого, меню, интро*/
+  .header-elements {
+    width: 1200px;
+    box-sizing: border-box;  
+    padding: 35px 15px; 
+    position: relative;  
+    z-index: 3; 
+  }
+  
+  /*слой, объединяющий лого, меню  */
+  .logo_menu {
+    display: flex;
+    justify-content: space-between;
+    position: relative;  
+    align-items: center;
+  }
+  
+  /* добавляем лого */
+  .logo {
+    width: 180px; 
+  }
+  
+  /* выравниваем элементы меню по горизонтали */
+  .header_menu_list {
+    display: flex;
+    position: relative;  
+    padding: 0;
+    gap: 35px;  
+  }
+  
+  /* выстраиваем элементы списка меню горизонтально */
+  .header_menu_list_item {
+    display: inline;  
+  }
+  
+  /* задаём стили для текста пунктов меню в шапке*/
+  .header_menu_list_item_link {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: "Open Sans";  
+    font-weight: 400;
+  }
+  
+  /* задаём стили для текста пунктов меню в шапке при наведении*/
+  .header_menu_list_item_link:hover {
+    text-decoration: underline;
+  }
+  
+  /* добавляем интро, не ограничен по вертикали */
+  .intro {
+    width: 679px;
+    margin: 120px auto 0 auto;  
+    text-align: center;
+    font-size: 45px;
+    line-height: 1.67;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-family: "Open Sans";
+    font-weight: 700;  
+  }
+  
+  /* задаём ширину блока main-aside */
+  .main-aside {
+    width: 1160px;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* задаём ширину блока main */
+  .main {
+    width: 775px;
+  }
+  
+  /* блок для картинки и поста */
+  .main_post {  
+    display: flex; 
+    gap: 30px;
+    margin-bottom: 55px;
+  }
+  
+  /* блок-контейнер для картинки */
+  
+  .main_post_image-area {
+    width: 381px;
+    background-color: #eff6f1; 
+  }
+  /* помещаем картинку в блок, растягиваем по блоку без искажения пропорций */
+  .main_post_image {   
+      width: 100%;
+      height: 100%;
+      object-fit: cover;	
+  }
+  
+  /* блок для поста */
+  .main_post_textarea {
+    width: 367px;
+  }
+  
+  /* контейнер для категорий */
+  .main_post_textarea_category {
+    padding-top: 2px;
+  }
+  
+  /* категории */
+  .main_post_textarea_category_item {
+    display: inline;
+    margin-right: 20px; 
+    font-size: 14px;  
+    text-transform: uppercase;
+    color: #b59f5b;  
+    font-family: "Open Sans";
+    font-weight: 700;  
+  }
+  
+  /* наведение на категории */
+  .main_post_textarea_category_item:hover {
+    text-decoration: underline;
+  }
+  
+  /* заголовок */
+  .main_post_textarea_title {
+    display: block;
+    font-size: 20px;
+    line-height: 1.2;
+    margin-top: 15px;
+    text-transform: uppercase;
+    color: #0f0d0e;
+    font-family: "Open Sans";
+    font-weight: 700;  
+  }
+  
+  /* навелись на заголовок */
+  .main_post_textarea_title:hover {
+    color: #b59f5b;
+  }
+  
+  /* контейнер для дата, автор */
+  .main_post_textarea_date-author {
+    display: flex;
+    position: relative;
+    margin-top: 20px;  
+  }
+  
+  /* форматируем дату */
+  .main_post_textarea_date {
+    vertical-align: top;
+    margin-right: 15px;
+    font-size: 12px;  
+    color: #888888;
+    font-family: "Open Sans";
+    font-weight: 400;
+  }
+  
+  /* форматируем автора */
+  .main_post_textarea_author {  
+    vertical-align: top;
+    font-size: 12px;  
+    color: #000000;
+    font-family: "Open Sans";
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  /* форматируем текст */
+  .main_post_textarea_text {
+    margin-top: 15px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #0f0d0e;
+    font-weight: 400;
+    font-family: "Open Sans"; 
+  }
+  
+  /* у первого абзаца padding больше, чем у остальных */
+  .main_post_textarea_text:first-of-type {
+    margin-top: 50px; 
+  }
+  
+  .aside {
+    width: 270px;
+  }
+  
+  
+  .aside_title {
+    text-align: center;
+    font-size: 14px; 
+    text-transform: uppercase;
+    color: #0f0d0e;
+    font-family: "Open Sans";
+    font-weight: 700;  
+  }
+  
+  .aside_title::after {
+    content:"";
+    opacity: 0.4;
+    width: 66px;
+    height: 3px;
+    background-color: #b59f5b;
+    display: block;
+    margin: 13px auto 15px auto;  
+  }
+  
+  .aside_latest-posts_list_item {
+    display: flex; 
+    margin-bottom: 20px;  
+  } 
+  
+  .aside_latest-posts_list_item:last-of-type {
+    margin-bottom: 0;
+  }  
+  
+  .aside_latest-posts_list_item_image-area {
+    width: 70px;
+    height: 70px;
+    margin-right: 20px;
+    background-color: #f4f7f6;; 
+  }
+  
+  /* помещаем картинку в блок, растягиваем по блоку без искажения пропорций */
+  .aside_latest-posts_list_item_image {     
+    width: 100%;
+    height: 100%;  
+    object-fit: cover;	
+    vertical-align: top; 
+  }
+  
+  .aside_latest-posts_list_item_date-text {
+    width: 180px;
+    
+  }
+  
+  .aside_latest-posts_list_item_date {
+    display: block;
+    margin-bottom: 4px;
+    opacity: 0.541;
+    font-size: 12px;  
+    color: #000000;
+    font-family: "Open Sans";
+    font-weight: 400;
+  }
+  
+  .aside_latest-posts_list_item_text {
+    font-size: 14px;
+    line-height: 1.28;
+    text-transform: uppercase;
+    color: #000000;
+    font-family: "Open Sans";
+    font-weight: 700;  
+  }
+  
+  .aside_latest-posts_list_item_text:hover {
+    color: #b59f5b;  
+  }
+  
+  .search {
+    display: flex;
+    position: relative;  
+    height: 48px;
+    margin-top: 60px; 
+  }
+  
+  /* блок Найти */
+  .input_area { 
+    width: 220px; 
+    height: 100%;
+    background-color: #f4f7f6;
+    opacity: 0.541;
+    font-size: 13px;
+    color: #000000;
+    font-family: "Open Sans";
+    font-weight: 400;
+    padding: 0 18px 0 18px;
+    border: 1px solid rgba(0, 0, 0, 0);
+   }
+  
+  /* блок Найти при попадании в фокус */
+  
+  .input_area:focus {    
+    border: 1px solid #b59f5b;
+    outline: none;  
+  }
+  
+  .search_btn { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px; 
+    height: 48px;
+    background:  #b59f5b url(https://netology-code.github.io/html-2-diploma/sources/images/search.svg)  no-repeat center/40%;
+  }
+  
+  .search-btn-image {
+    width: 50%; 
+  }
+  
+  /*блок подписаться*/
+  .subscribe {
+    margin-top: 60px;  
+  }
+  
+  .subscribe_input {
+    display: block;
+    width: 100%;
+    height: 48px;
+    padding: 0 18px 0 18px;
+    background-color: #f4f7f6;
+    opacity: 0.541;
+    font-size: 13px;  
+    color: #000000;
+    font-weight: 400;
+    font-family: "Open Sans";
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+  
+  .subscribe_input:focus {    
+    border: 1px solid #b59f5b;
+    outline: none;
+    opacity: 0.541;
+  }
+  
+  .subscribe_input_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    margin-top: 20px;
+    background-color: #b59f5b;  
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: "Open Sans";
+  }
+  .subscribe_input_btn:hover {
+    background-color: #323232;
+  }
+  
+  /*блок Теги*/
+  .tags {
+    margin-top: 60px;
+  }
+  .tags_box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  
+  .tags_box_tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px 0 15px;  
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #0f0d0e;
+    font-weight: 700;
+    font-family: "Open Sans";
+    height: 30px;
+    background-color: rgba(244,243,241,0);
+    border: 3px solid #eeeeee;  
+  }
+  
+  .tags_box_tag:hover {
+    border: 3px solid #b59f5b;
+  }
+  
+  /*Категории*/
+  .categories {
+    margin-top: 60px;
+  }
+  
+  .categories_box {
+    display: block;  
+  }
+  
+  .categories_box_category {
+    height: 50px;
+    font-size: 14px;
+    color: #000000;
+    font-weight: 700;
+    font-family: "Open Sans";
+    border-bottom: 1px solid #eeeeee;
+    padding: 15px 0 15px 0;
+    box-sizing: border-box;
+  }
+  
+  .categories_box_category:hover {
+    color: #b59f5b;
+  }
+  
+  .categories_box_category-number {
+    font-size: 12px;
+    color: #b59f5b;
+    font-weight: 700;
+    font-family: "Open Sans";
+    position: relative;
+    left: 3px;
+    top: -3px;  
+  }
+  
+  /*Подвал*/
+  .footer {
+    display: block;  
+    width: 1170px;
+    margin: auto;
+  }
+  
+  .footer_icons {    
+    background-color: #f4f7f6;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .footer_iconsarea {
+    display: flex;  
+    justify-content: center;
+    margin: auto;
+    gap: 30px;
+  }
+  
+  .footer_iconsarea_icon_a{
+    display: block;
+    width: 20px;
+    height: 20px;
+    
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .footer_iconsarea_icon_a_dribbble{ 
+    background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/001-dribbble.svg");  
+  }
+  
+  .footer_iconsarea_icon_a_pinterest{
+    background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/002-pinterest.svg");
+  }
+  
+  .footer_iconsarea_icon_a_tumblr{
+    background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/003-tumblr.svg");
+  }
+  
+  .copyrights {
+    width: 100%;
+    margin: 70px auto 40px auto;
+    text-align: center;
+    font-size: 12px;  
+    color: #999999;
+    font-weight: 700;
+    font-family: "Open Sans";
+  }
+  
+  .visually-hidden {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    margin: -1px;
+    padding: 0;
+    border: 0;  
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  } 
