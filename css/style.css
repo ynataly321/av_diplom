@@ -18,21 +18,21 @@ body, p, h1, h2, h3, ul {
   /* подключаем шрифты */
   @font-face {
     font-family: "Open Sans";
-    src: url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Regular.woff);
+    src: url(../fonts/OpenSans-Regular.woff);
     font-weight: 400;  
   }
   
   @font-face {
     font-family: "Open Sans";
-    src: url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Bold.woff);
+    src: url(../fonts/OpenSans-Bold.woff);
     font-weight: 700;  
   }
   
   /* формируем область шапки*/
   .header {
-    min-width: 1220px;  
+    min-width: 100%;  
     padding-bottom: 145px;
-    background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/banner-bg.jpg);
+    background-image: url(../images/banner-bg.jpg);
     background-size: cover;
     display: flex;
     position: relative; 
@@ -55,11 +55,13 @@ body, p, h1, h2, h3, ul {
   
   /*слой, объединяющий лого, меню, интро*/
   .header-elements {
+    display: flex;
     width: 1200px;
     box-sizing: border-box;  
     padding: 35px 15px; 
     position: relative;  
     z-index: 3; 
+    flex-direction: column;
   }
   
   /*слой, объединяющий лого, меню  */
@@ -117,8 +119,8 @@ body, p, h1, h2, h3, ul {
   
   /* задаём ширину блока main-aside */
   .main-aside {
-    width: 1160px;
-    margin-top: 60px;
+    max-width: 1170px;
+    margin-top: 65px;
     display: flex;
     justify-content: space-between;
     margin-left: auto;
@@ -127,7 +129,8 @@ body, p, h1, h2, h3, ul {
   
   /* задаём ширину блока main */
   .main {
-    width: 775px;
+    width: 60%;
+    max-width: 775px;
   }
   
   /* блок для картинки и поста */
@@ -140,7 +143,7 @@ body, p, h1, h2, h3, ul {
   /* блок-контейнер для картинки */
   
   .main_post_image-area {
-    width: 381px;
+    max-width: 381px;
     background-color: #eff6f1; 
   }
   /* помещаем картинку в блок, растягиваем по блоку без искажения пропорций */
@@ -152,7 +155,7 @@ body, p, h1, h2, h3, ul {
   
   /* блок для поста */
   .main_post_textarea {
-    width: 367px;
+    max-width: 367px;
   }
   
   /* контейнер для категорий */
@@ -345,7 +348,7 @@ body, p, h1, h2, h3, ul {
     align-items: center;
     width: 48px; 
     height: 48px;
-    background:  #b59f5b url(https://netology-code.github.io/html-2-diploma/sources/images/search.svg)  no-repeat center/40%;
+    background:  #b59f5b url(../svg/search.svg)  no-repeat center/40%;
   }
   
   .search-btn-image {
@@ -462,7 +465,7 @@ body, p, h1, h2, h3, ul {
   /*Подвал*/
   .footer {
     display: block;  
-    width: 1170px;
+    max-width: 1170px;
     margin: auto;
   }
   
@@ -489,15 +492,15 @@ body, p, h1, h2, h3, ul {
   }
   
   .footer_iconsarea_icon_a_dribbble{ 
-    background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/001-dribbble.svg");  
+    background-image: url("../svg/001-dribbble.svg");  
   }
   
   .footer_iconsarea_icon_a_pinterest{
-    background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/002-pinterest.svg");
+    background-image: url("../svg/002-pinterest.svg");
   }
   
   .footer_iconsarea_icon_a_tumblr{
-    background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/003-tumblr.svg");
+    background-image: url("../svg/003-tumblr.svg");
   }
   
   .copyrights {
@@ -520,3 +523,128 @@ body, p, h1, h2, h3, ul {
     clip: rect(0 0 0 0);
     overflow: hidden;
   } 
+
+  /*доработка диплом адаптивня вёрстка*/
+  .trends {
+    display: flex;
+    max-width: 1660px;
+    margin: auto;    
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .trends-title {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #0f0d0e;
+    font-weight: 700;
+    font-family: "Open Sans";
+    padding-top: 65px;
+  }
+
+  .trends-title::after {
+    content:"";
+    opacity: 0.4;
+    width: 66px;
+    height: 3px;
+    background-color: #b59f5b;
+    display: block;
+    margin: 13px auto 30px auto;     
+  }
+  
+  .trends-area {
+    display: grid;
+    grid-template-columns: repeat(4,minmax(180px,1fr));
+    gap: 5px;
+  }
+  
+  /* блок-контейнер для картинки */
+  .trends-item {
+    display: flex;
+    position: relative;   
+    align-items: flex-end;
+    min-height: 320px;    
+  }  
+
+  .item1{
+    background: #eff6f1 url("../images/trend1.jpg") no-repeat center/cover;
+  }
+
+  .item2{
+    background: #eff6f1 url("../images/trend2.jpg") no-repeat center/cover;
+  }
+  
+  .item3{
+    background: #eff6f1 url("../images/trend3.jpg") no-repeat center/cover;
+  }
+  
+  .item4{
+    background: #eff6f1 url("../images/trend4.jpg") no-repeat center/cover;
+  } 
+
+ 
+
+  /* добавляем полупрозрачный слой */
+  .trends-item::after{ 
+    content: "";    
+    width: 100%; 
+    height: 100%;    
+    background-color: #000000;   
+    position: absolute;    
+    z-index: 2;
+    opacity: 0.6;  
+  }
+
+  /* область рамка-категория-название*/
+  .trends-item-bordersarea {
+    display: flex;    
+    width: calc(100% - 40px);    
+    border: 3px solid #b59f5b;
+    margin: 20px 20px 20px 20px;
+    position: relative;    
+    z-index: 3;    
+    flex-direction: column;    
+  }
+  
+  /* выравниваем элементы меню по горизонтали ul*/
+  .trends-item-categorieslist{
+    display: flex; 
+    position: relative;
+    padding: 40px 30px 15px 30px;
+    gap: 20px; 
+    flex-wrap: wrap;         
+  }
+
+   /* выстраиваем элементы списка меню горизонтально li*/
+  .trends-item-categorieslist > li{
+    display: inline;  
+  }
+
+  .trends-item-category {
+    font-size: 14px;    
+    text-transform: uppercase;
+    color: #b59f5b;
+    font-weight: 700;
+    font-family: "Open Sans";
+    line-height: 0.4;
+  }
+
+  .trends-item-category:hover{
+    text-decoration: underline;
+  }
+
+  .trends-item-title {
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: "Open Sans";
+    padding: 0 30px 40px 30px;    
+    overflow-wrap: break-word;
+  }
+
+  .trends-item-title:hover{
+    color: #b59f5b;
+  }  
+   
